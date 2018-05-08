@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏布局-flex</title>
+    <style>
+        body{
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            overflow: hidden;
+
+        }
+        .left,.right{
+            width: 200px;
+            background-color: yellowgreen;
+            height: 200px;
+        }
+        .left{
+        }
+        .right {
+        }
+        .middle{
+            height: 200px;
+            background-color: gold;
+           flex: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="left">left</div>
+    <div class="middle">middle</div>
+    <div class="right">right</div>
+</div>
+</body>
+</html>

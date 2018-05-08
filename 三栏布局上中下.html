@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏布局上中下</title>
+    <style>
+        .container{
+            width: 100%;
+            background-color: yellowgreen;
+        }
+        .top{
+            background-color: gold;
+            height: 50px;
+            position: fixed;
+            top:0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            line-height: 50px;
+
+        }
+        .middle{
+            margin-top: 50px;
+            background-color: yellowgreen;
+        }
+        .footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: silver;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="top">top</div>
+    <div class="middle">middle</div>
+    <div class="footer">footer</div>
+</div>
+</body>
+</html>
