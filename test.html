@@ -1,29 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        body{
+        body {
             margin: 0;
             padding: 0;
         }
+
         #box {
             width: 100%;
             height: 500px;
         }
+
         #inbox {
-            border:1px solid red;
+            border: 1px solid red;
             position: absolute;
-            left:50%;
-            top:50%;
-            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
+
 <body>
-<div id="box">
-    <div id="inbox">wode </div>
-</div>
+    <div id="box">
+        <div id="inbox">wode </div>
+    </div>
 </body>
+
 </html>
+<script>
+    function chiNum(num) {
+        let arr = (num + '').split('.')
+        let left = parseInt(arr[0], 10)
+        let right = parseInt(arr[1], 10)
+        if (right >= 5) {
+            left++
+        }
+        return left
+        //return parseInt((num + 0.5),10)
+    }
+    console.log(chiNum(1000.59))
+    const findSum = (arr, val) => {
+        let set = new Set()
+        set.add((val-arr[0]))
+        for(let i=1; i< arr.length; i++) {
+            reval = val - arr[i]
+            if(set.has(arr[i])) {
+                return true
+            }else{
+                set.add(reval) 
+            }
+        }
+        return false
+    }
+   let res = findSum([3,5,1,4],9)
+   console.log(res,'res')
+
+   // A instanceof B, 在A的原型链中层层查找，是否有原型等于B.prototype，如果一直找到A的原型链的顶端null,仍然不等于B.prototype，那么返回false，否则返回true.
+   const _instanceof = (left, right) => {
+    let Ro = right.prototype
+    let L = left.__proto__
+    while(true) {
+        if(L === null) {
+            return false
+        }
+        if(L === Ro) {
+            return true
+        }
+        L = L.__proto__
+    }
+   }
+   let f = new Function()
+   console.log(f.prototype)
+</script>
